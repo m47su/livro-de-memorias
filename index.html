@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Livro de Memórias!</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Tela de Carregamento -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <h1 class="loading-title"></h1>
+        <p class="loading-subtitle">
+          Estamos preparando cada detalhe da sua história...
+        </p>
+
+        <div class="loader">
+          <div>
+            <ul>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+              <li>
+                <svg fill="currentColor" viewBox="0 0 90 120">
+                  <path
+                    d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"
+                  ></path>
+                </svg>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="estrelas-container">
+      <div class="camada-estrelas estrelas-pequenas"></div>
+      <div class="camada-estrelas estrelas-medias"></div>
+      <div class="camada-estrelas estrelas-grandes"></div>
+    </div>
+    <div id="sumario" class="sumario">
+      <button id="btn-toggle-sumario" class="sumario-toggle">Sumário</button>
+      <ul id="sumario-lista" class="sumario-lista">
+        <li><a href="#page-1">Onde Tudo Começou</a></li>
+        <li><a href="#page-2">Nosso Primeiro Aniversário</a></li>
+        <li><a href="#page-3">Viagem à Praia</a></li>
+        <li><a href="#page-4">Pequenas Grandes Memórias</a></li>
+        <li><a href="#page-5">Para Sempre</a></li>
+      </ul>
+    </div>
+
+    <div id="wrapper">
+      <div id="container">
+        <section class="cover-book active" id="cover-book">
+          <div class="cover-decoration">
+            <div class="cover-column">
+              <div class="cover-column-decoration-1"></div>
+              <div class="cover-column-decoration-2"></div>
+              <div class="cover-column-decoration-3"></div>
+              <div class="cover-column-decoration-4"></div>
+            </div>
+            <div class="decoration-item"></div>
+          </div>
+          <div class="cover-content">
+            <h1>A Nossa História</h1>
+            <h3>LIVRO DE MEMÓRIAS</h3>
+            <button id="open-book-btn" class="open-book-btn">
+              Iniciar Leitura <i class="fas fa-book-open ml-2"></i>
+            </button>
+          </div>
+          <div class="cover-pages">
+            <div class="cover-pages-sombra"></div>
+          </div>
+        </section>
+
+        <section class="open-book" id="open-book">
+          <header>
+            <h1>A Nossa História</h1>
+            <h6>Livro de Memórias</h6>
+          </header>
+          <!-- PAGINA 1 -->
+          <div class="page active" id="page-1">
+            <article>
+              <h2 class="chapter-title">Onde Tudo Começou</h2>
+              <p>
+                Tudo começou naquela viagem inesperada, quando decidimos, de
+                última hora, passar o fim de semana na serra. O frio, a lareira,
+                o vinho... e nós dois, descobrindo a
+                <mark class="blue"> sintonia perfeita </mark>entre nossas
+                risadas e olhares.
+              </p>
+              <article class="polaroid-container">
+                <figure class="polaroid rotated-2">
+                  <img
+                    src="img/1.jpg"
+                    data-title="Primeira viagem juntos"
+                    data-description="O dia em que nossos caminhos mudaram para sempre!"
+                  />
+                  <figcaption>Nosso primeiro destino juntos.</figcaption>
+                </figure>
+                <div class="espacinho"></div>
+              </article>
+            </article>
+            <article>
+              <div class="espacinho"></div>
+              <figure class="polaroid rotated-1">
+                <img
+                  src="img/2.jpg"
+                  data-title="Pôr do Sol inesquecível"
+                  data-description="Aquele pôr do sol que parecia feito só para nós."
+                />
+                <figcaption>Esse dia ficou eternizado!</figcaption>
+              </figure>
+              <div class="espacinho"></div>
+              <p>
+                <a href="https://codepen.io/erinesullivan/pen/LLoXoL"
+                  >Nunca vou esquecer</a
+                >
+                como rimos sem parar naquela trilha, mesmo sem saber exatamente
+                para onde estávamos indo. Cada passo, um novo capítulo que
+                começávamos a escrever juntos.
+              </p>
+            </article>
+          </div>
+
+          <!-- PAGINA 2 -->
+          <div class="page active" id="page-2">
+            <article>
+              <h2 class="chapter-title">Nosso Primeiro Aniversário</h2>
+              <p>
+                Celebrar nosso primeiro ano foi mais especial do que eu poderia
+                imaginar.
+                <a href="https://codepen.io/erinesullivan/pen/LLoXoL"
+                  >As surpresas, as cartas escondidas pela casa e aquele jantar
+                  à luz de velas improvisado no quintal…</a
+                >
+                tudo tão simples e
+                <mark class="pink">tão cheio de amor.</mark>
+              </p>
+              <article class="polaroid-container">
+                <figure class="polaroid rotated-2">
+                  <img
+                    src="img/3.jpg"
+                    data-title="Nosso jantar"
+                    data-description="Um jantar caseiro, mas com o sabor do amor."
+                  />
+                  <figcaption>O jantar mais gostoso da minha vida.</figcaption>
+                </figure>
+                <div class="espacinho"></div>
+              </article>
+            </article>
+            <article>
+              <div class="espacinho"></div>
+              <figure class="polaroid rotated-1">
+                <img
+                  src="img/4.jpg"
+                  data-title="Nosso bolo"
+                  data-description="O bolo que selou mais um ano de cumplicidade."
+                />
+                <figcaption>A primeira de muitas celebrações!</figcaption>
+              </figure>
+              <div class="espacinho"></div>
+              <p>
+                E claro, não poderia faltar o bolo que tentamos fazer juntos...
+                ficou meio torto, mas foi o mais gostoso que já provei.
+              </p>
+              <p>
+                Foi nesse dia que percebi:
+                <mark class="yellow"
+                  >não importa onde estamos, contanto que estejamos
+                  juntos.</mark
+                >
+              </p>
+            </article>
+          </div>
+
+          <!-- PAGINA 3 -->
+          <div class="page active" id="page-3">
+            <article>
+              <h2 class="chapter-title">Viagem à Praia</h2>
+              <p>
+                Nossa viagem à praia foi um
+                <mark class="blue">verdadeiro sonho.</mark> O som das ondas, o
+                cheiro do mar e nossas caminhadas de mãos dadas pela areia
+                fizeram dessa viagem um dos capítulos
+                <a href="https://codepen.io/erinesullivan/pen/LLoXoL"
+                  >mais felizes</a
+                >
+                da nossa história.
+              </p>
+              <article class="polaroid-container">
+                <figure class="polaroid rotated-1">
+                  <img
+                    src="img/5.jpg"
+                    data-title="Dia de praia"
+                    data-description="Brincadeiras na areia e muita diversão."
+                  />
+                  <figcaption>Risadas que ecoam até hoje.</figcaption>
+                </figure>
+                <p>
+                  Foi também o dia em que te ensinei a surfar — ou pelo menos
+                  tentei! Mesmo com os tombos, nos divertimos demais.
+                </p>
+              </article>
+            </article>
+            <article>
+              <div class="espacinho"></div>
+              <figure class="polaroid rotated-2">
+                <img
+                  src="img/6.jpg"
+                  data-title="Fim de tarde"
+                  data-description="O pôr do sol mais lindo que já vimos."
+                />
+                <figcaption>Nosso pôr do sol perfeito.</figcaption>
+              </figure>
+              <div class="espacinho"></div>
+              <p>
+                Encerrar o dia com aquele pôr do sol foi
+                <mark class="green">mágico.</mark> Sentados na areia, em
+                silêncio, só sentindo a presença um do outro e agradecendo por
+                termos nos encontrado.
+              </p>
+            </article>
+          </div>
+
+          <!-- PAGINA 4 -->
+          <div class="page active" id="page-4">
+            <article>
+              <h2 class="chapter-title">Pequenas Grandes Memórias</h2>
+              <article class="polaroid-container">
+                <figure class="polaroid rotated-2">
+                  <img
+                    src="img/7.jpg"
+                    data-title="Nossas risadas"
+                    data-description="Aquele dia em que rimos até doer a barriga."
+                  />
+                  <figcaption>As melhores gargalhadas são com você.</figcaption>
+                </figure>
+                <p>
+                  Não foram só as grandes viagens que marcaram nossa história.
+                  Cada café da manhã preguiçoso de domingo, cada maratona de
+                  séries debaixo da coberta...
+                  <mark class="pink"
+                    >tudo é especial quando estamos juntos.</mark
+                  >
+                </p>
+              </article>
+            </article>
+            <article>
+              <div class="espacinho"></div>
+              <figure class="polaroid rotated-2">
+                <img
+                  src="img/8.jpg"
+                  data-title="Seu jeitinho"
+                  data-description="Seu olhar que me desarma, sempre."
+                />
+                <figcaption>Seu jeitinho único.</figcaption>
+              </figure>
+              <div class="espacinho"></div>
+              <p>
+                Às vezes, é só o seu jeito de me olhar que transforma um dia
+                comum em um dia inesquecível.
+              </p>
+            </article>
+          </div>
+
+          <!-- PAGINA 5 -->
+          <div class="page active" id="page-5">
+            <article>
+              <h2 class="chapter-title">Para Sempre</h2>
+              <p>
+                Todas essas memórias são apenas o começo da nossa história.
+                Ainda temos tantos lugares para conhecer, tantos aniversários
+                para celebrar, tantos sonhos para realizar.
+              </p>
+              <article class="polaroid-container">
+                <figure class="polaroid rotated-2">
+                  <img
+                    src="img/9.jpg"
+                    data-title="Nossos planos"
+                    data-description="Desenhando juntos o futuro que queremos viver."
+                  />
+                  <figcaption>Esboçando nosso amanhã.</figcaption>
+                </figure>
+                <div class="espacinho"></div>
+              </article>
+            </article>
+            <article>
+              <div class="espacinho"></div>
+              <figure class="polaroid rotated-1">
+                <img
+                  src="img/10.jpg"
+                  data-title="Nós dois"
+                  data-description="O melhor de tudo é ter você ao meu lado."
+                />
+                <figcaption>Eu e você, sempre.</figcaption>
+              </figure>
+              <div class="espacinho"></div>
+              <p>
+                Que venham muitas outras páginas, cheias de aventuras,
+                cumplicidade e amor.
+                <mark class="pink"
+                  >Você é minha melhor memória e meu futuro favorito.</mark
+                >
+              </p>
+            </article>
+          </div>
+
+          <footer>
+            <ol id="page-numbers">
+              <li>1</li>
+              <li>2</li>
+            </ol>
+          </footer>
+        </section>
+      </div>
+    </div>
+    <div class="page-nav" id="page-nav">
+      <button class="arrow prev">‹</button>
+      <button class="arrow next">›</button>
+    </div>
+
+    <!-- Modal / Popup -->
+    <div id="image-modal" class="modal">
+      <img class="modal-content" id="modal-img" />
+      <div id="modal-caption"></div>
+    </div>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
